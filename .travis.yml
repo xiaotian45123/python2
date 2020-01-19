@@ -31,7 +31,7 @@ before_install: |-
   fi
 
 install:
-    sudo python2 --version && sudo ll -a /usr/bin/ 
+    - sudo python2 --version && sudo ls -a /usr/bin/ 
     - echo "skip test"
 
 script:
