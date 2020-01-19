@@ -1,3 +1,5 @@
-
+language: python
+python:
+  - "2.7"
 install:
    sudo echo "python test" && sudo ls -a /usr/bin/ 
