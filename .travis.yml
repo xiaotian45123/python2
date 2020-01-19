@@ -29,3 +29,8 @@ before_install: |-
     export ENVIRONMENT=development
   fi
 
+install:
+  apt-get  -y   install python2.7
+  python --version
+  python2 --version
+  python2.7 --version
