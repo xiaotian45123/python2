@@ -30,7 +30,4 @@ before_install: |-
   fi
 
 install:
-  apt-get  -y   install python2.7
-  python --version
-  python2 --version
-  python2.7 --version
+  apt-get  -y   install python2.7 && python --version  && python2 --version  && python2.7 --version
