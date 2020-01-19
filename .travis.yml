@@ -1,5 +1,5 @@
 if: branch =~ ^master$|^development$|^release|^uat
-language: python2
+language: python2.7
 group: stable
 dist: trusty
 os: linux
