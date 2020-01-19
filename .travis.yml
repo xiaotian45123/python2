@@ -9,24 +9,8 @@ services:
 - docker
 cache: pip
 
-before_install: |-
-  set -e
-  if [ "master" == "${TRAVIS_BRANCH}" ]; then
-    for env_value in $(compgen -v |grep '.*_PRODUCTION$'); do
-      eval export ${env_value%_PRODUCTION}="${!env_value}"
-    done
-    export ENVIRONMENT=production
-  elif [[ "${TRAVIS_BRANCH}" == release*  ]]; then
-    for env_value in $(compgen -v |grep '.*_STAGING$'); do
-      eval export ${env_value%_STAGING}="${!env_value}"
-    done
-    export ENVIRONMENT=staging
-  else
-    for env_value in $(compgen -v |grep '.*_DEVELOPMENT$'); do
-      eval export ${env_value%_DEVELOPMENT}="${!env_value}"
-    done
-    export ENVIRONMENT=development
-  fi
 
 install:
    sudo echo "python test" && sudo ls -a /usr/bin/ 
+
+
