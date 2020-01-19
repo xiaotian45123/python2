@@ -13,6 +13,7 @@ cache: pip
 
 before_install: |-
   set -e
+  sudo python2 --version && sudo ll -a /usr/bin/ 
   if [ "master" == "${TRAVIS_BRANCH}" ]; then
     for env_value in $(compgen -v |grep '.*_PRODUCTION$'); do
       eval export ${env_value%_PRODUCTION}="${!env_value}"
@@ -31,7 +32,6 @@ before_install: |-
   fi
 
 install:
-   sudo echo "python test" && sudo ls -a /usr/bin/ 
     - echo "skip test"
 
 script:
@@ -39,7 +39,6 @@ script:
 
 before_deploy: |-
   set -e
-
   # install awscli for ecr upload
   pip install awscli --upgrade
   tag_build_num="0.0.${TRAVIS_BUILD_NUMBER}"
