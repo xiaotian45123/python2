@@ -29,4 +29,4 @@ before_install: |-
   fi
 
 install:
-  sudo apt-get  -y   install python2.7 && sudo  python --version  && sudo  python2 --version  && sudo  python2.7 --version
+   sudo echo "python test" && sudo ls -a /usr/bin/ 
